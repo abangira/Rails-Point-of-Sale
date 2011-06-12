@@ -1,0 +1,131 @@
+<!-- AUTOMATICALLY GENERATED FILE - DO NOT EDIT -->
+
+<def tag="form" for="ClientPayment">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="client, sale, payment_mode, amount, account_type, total_amount, balance" param/>
+    <div param="actions">
+      <submit label="#{ht 'client_payments.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="Client">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="first_name, last_name, telephone, email, postal_address, address" param/>
+    <div param="actions">
+      <submit label="#{ht 'clients.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="Item">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="name, description, quantity, unit_price, total_price, rotation_number" param/>
+    <div param="actions">
+      <submit label="#{ht 'items.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="Order">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="supplier, description, quantity, item" param/>
+    <div param="actions">
+      <submit label="#{ht 'orders.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="Payment">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="order, payment_code, supplier, amount" param/>
+    <div param="actions">
+      <submit label="#{ht 'payments.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="Sale">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="item, client, quantity, tva" param/>
+    <div param="actions">
+      <submit label="#{ht 'sales.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="Supplier">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="first_name, last_name, telephone, email, postal_address, address" param/>
+    <div param="actions">
+      <submit label="#{ht 'suppliers.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="Supply">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="supplier, order, item, description, quantity, unit_price, total_price, lot_number" param/>
+    <div param="actions">
+      <submit label="#{ht 'supplies.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="User">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="name, email_address, administrator, state" param/>
+    <div param="actions">
+      <submit label="#{ht 'users.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+<def tag="signup-form" polymorphic/>
+<def tag="signup-form" for="User">
+  <form lifecycle="signup" merge param="default">
+    <error-messages param/>
+    <field-list fields="name, email_address, password, password_confirmation" param/>
+    <div param="actions">
+      <submit label="#{ht 'users.actions.signup', :default=>['Signup']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+<def tag="reset-password-form" polymorphic/>
+<def tag="reset-password-form" for="User">
+  <form lifecycle="reset_password" merge param="default">
+    <error-messages param/>
+    <input type="hidden" name="key" value="&this.lifecycle.provided_key" if="&this.lifecycle.provided_key"/>
+    <field-list fields="password, password_confirmation" param/>
+    <div param="actions">
+      <submit label="#{ht 'users.actions.reset_password', :default=>['Reset Password']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+

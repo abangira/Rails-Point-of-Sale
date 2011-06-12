@@ -1,0 +1,12 @@
+﻿The models
+Let’s review what we want this app to do:
+Track multiple orders
+ Track multiple sales
+ Each having a collection of items
+ Record clients
+ Record suppliers
+Track stock.....the store will have base stock
+A payment has status—outstanding payments, fully paid
+Roles can be assigned to users-salesman or manager
+Users can get an easy view of the order they placed
+
